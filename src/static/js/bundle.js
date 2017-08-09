@@ -21459,7 +21459,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "http://localhost:3000/api";
+	//const API_URL = "http://localhost:3000/api";
+	var API_URL = "https://hidden-scrubland-25651.herokuapp.com/api";
 
 	var Question = _react2.default.createClass({
 	  displayName: 'Question',
@@ -21467,6 +21468,7 @@
 	    return {
 	      selectedValue: '',
 	      error: '',
+	      question_id: 1,
 	      question: [],
 	      answers: [],
 	      showQuestion: true,
@@ -21476,7 +21478,7 @@
 	  componentDidMount: function componentDidMount() {
 	    var _this = this;
 
-	    _axios2.default.get(API_URL + '/questions/1').then(function (response) {
+	    _axios2.default.get(API_URL + ('/questions/' + this.state.question_id)).then(function (response) {
 	      _this.setState({
 	        question: response.data.question,
 	        answers: response.data.answers
@@ -22635,7 +22637,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "http://localhost:3000/api";
+	//const API_URL = "http://localhost:3000/api";
+	var API_URL = "https://hidden-scrubland-25651.herokuapp.com/api";
 
 	var Results = _react2.default.createClass({
 	  displayName: 'Results',

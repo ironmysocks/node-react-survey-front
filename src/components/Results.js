@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-const API_URL = "http://localhost:3000/api";
+//const API_URL = "http://localhost:3000/api";
+const API_URL = "https://hidden-scrubland-25651.herokuapp.com/api";
 
 var Results = React.createClass({
 

@@ -2,7 +2,8 @@ import React from 'react';
 import {RadioGroup, Radio} from 'react-radio-group';
 import Results from './Results';
 import axios from 'axios';
-const API_URL = "http://localhost:3000/api";
+//const API_URL = "http://localhost:3000/api";
+const API_URL = "https://hidden-scrubland-25651.herokuapp.com/api";
 
 var Question = React.createClass({
 
@@ -10,6 +11,7 @@ var Question = React.createClass({
     return {
       selectedValue: '',
       error: '',
+      question_id: 1,
       question: [],
       answers: [],
       showQuestion: true,
@@ -18,7 +20,7 @@ var Question = React.createClass({
   },
 
   componentDidMount() {
-    axios.get(API_URL + '/questions/1')
+    axios.get(API_URL + `/questions/${this.state.question_id}`)
       .then((response) => {
         this.setState({
           question: response.data.question,
